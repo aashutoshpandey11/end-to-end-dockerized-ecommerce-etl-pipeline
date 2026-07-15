@@ -18,7 +18,7 @@ st.set_page_config(
 @st.cache_resource
 def get_engine():
     return create_engine(
-        "postgresql://postgres:postgresql@localhost:5433/ecommerce_db"
+        "postgresql://etl_user:l6UxY36EQoS6zFnlr5IuYPdxdl3SPJ9x@dpg-d9biutok1i2s73dq4fc0-a.oregon-postgres.render.com:5432/ecommerce_db_7pdg"
     )
 
 engine = get_engine()
