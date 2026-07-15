@@ -12,5 +12,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project files
 COPY . .
 
-# Run the ETL pipeline
-CMD ["python", "scripts/main.py"]
+# Expose Render port
+EXPOSE 10000
+
+# Start Streamlit
+CMD streamlit run dashboard/app.py \
+    --server.port=$PORT \
+    --server.address=0.0.0.0
