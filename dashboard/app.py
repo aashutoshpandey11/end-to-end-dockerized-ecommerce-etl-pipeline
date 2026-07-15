@@ -580,6 +580,9 @@ else:
 # Dashboard Footer
 # =====================================================
 
+st.divider()
+
 st.caption(
-    "Built with using Streamlit, PostgreSQL, Docker, SQLAlchemy and Plotly"
+    "Built with Python, Streamlit, PostgreSQL, Docker, SQLAlchemy, and Plotly."
 )
+st.caption("Designed & Developed by Aashutosh Pandey © 2026")
