@@ -119,7 +119,7 @@ if filtered_df.empty:
 # -----------------------------
 # Dashboard Title
 # -----------------------------
-st.title("📊 Cloud-Based Automated E-Commerce ETL Dashboard")
+st.title("📊 End-to-End Dockerized E-Commerce ETL Dashboard")
 st.markdown("### Real-Time Analytics from PostgreSQL")
 
 st.divider()
