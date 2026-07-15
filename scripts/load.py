@@ -19,7 +19,7 @@ def load_data():
     logger.info(f"Loading {len(df)} records into PostgreSQL")
 
     engine = create_engine(
-        "postgresql://postgres:postgresql@postgres:5432/ecommerce_db"
+        "postgresql://l6UxY36EQoS6zFnlr5IuYPdxdl3SPJ9x@dpg-d9biutok1i2s73dq4fc0-a.oregon-postgres.render.com:5432/ecommerce_db_7pdg"
     )
 
     df.to_sql(
