@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from sqlalchemy import create_engine
 
@@ -18,9 +19,12 @@ def load_data():
 
     logger.info(f"Loading {len(df)} records into PostgreSQL")
 
-    engine = create_engine(
-        "postgresql://etl_user:l6UxY36EQoS6zFnlr5IuYPdxdl3SPJ9x@dpg-d9biutok1i2s73dq4fc0-a.oregon-postgres.render.com:5432/ecommerce_db_7pdg"
-    )
+    DATABASE_URL = os.getenv("DATABASE_URL")
+
+    if not DATABASE_URL:
+        raise ValueError("DATABASE_URL environment variable is not set.")
+
+    engine = create_engine(DATABASE_URL)
 
     df.to_sql(
         "products",

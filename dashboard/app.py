@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -17,9 +18,14 @@ st.set_page_config(
 # -----------------------------
 @st.cache_resource
 def get_engine():
-    return create_engine(
-        "postgresql://etl_user:l6UxY36EQoS6zFnlr5IuYPdxdl3SPJ9x@dpg-d9biutok1i2s73dq4fc0-a.oregon-postgres.render.com:5432/ecommerce_db_7pdg"
-    )
+    database_url = os.getenv("DATABASE_URL")
+
+    if not database_url:
+        raise ValueError(
+            "DATABASE_URL environment variable is not set."
+        )
+
+    return create_engine(database_url)
 
 engine = get_engine()
 
