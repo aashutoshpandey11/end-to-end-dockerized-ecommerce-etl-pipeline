@@ -16,6 +16,4 @@ COPY . .
 EXPOSE 10000
 
 # Start Streamlit
-CMD streamlit run dashboard/app.py \
-    --server.port=$PORT \
-    --server.address=0.0.0.0
+CMD ["sh", "-c", "streamlit run dashboard/app.py --server.port=$PORT --server.address=0.0.0.0"]
